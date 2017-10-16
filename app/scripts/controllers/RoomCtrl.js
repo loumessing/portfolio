@@ -3,7 +3,7 @@ function RoomCtrl(){
 
 }
 angular
-  .module('blocChat')
+  .module('bloc-chat')
   .controller('RoomCtrl', ['Room', RoomCtrl]);
 
 })();
