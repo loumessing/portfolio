@@ -19,7 +19,16 @@
             templateUrl: '/templates/rooms.html'
           });
   }
+
+  var app = angular.module("blocChat", ["firebase"]);
+
+  app.controller("blocChat", function($scope, $firebaseObject){
+    var ref = firebase.database().ref();
+    //download data to local address
+    $scope.data = $firebaseObject(ref);
+  });
+  
   angular
-    .module('bloc-chat', ['ui.router', 'firebase'])
+    .module('blocChat', ['ui.router', 'firebase'])
         .config(config);
 })();

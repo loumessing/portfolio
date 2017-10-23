@@ -1,15 +1,16 @@
-(function(){
-  function Room($fireabasearray) {
-    var Room = {};
-    var ref = firebase.database().ref().child("rooms");
-    var rooms = $firebaseArray(ref);
+(function() {
+  function Room($firebaseArray) {
+ // var ref = new firebase('https://lm-bloc-chat.firebaseio.com/rooms');
+  var Room = {};
+  var ref = firebase.database().ref().child("rooms");
+  var rooms = $firebaseArray(ref);
 
-    Room.all = rooms;
+ Room.all = rooms;
 
-    return Room;
+ return Room;
+
   }
-
   angular
-    .module('bloc-chat')
+    .module('blocChat')
     .factory('Room', ['$firebaseArray', Room]);
 })();
